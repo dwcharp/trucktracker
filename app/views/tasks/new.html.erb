@@ -1,0 +1,21 @@
+<%= form_for :task, url: tasks_path do |f| %>
+  <p>
+    <%= f.label :loading_point %><br>
+    <%= f.text_field :loading_point%>
+  </p>
+
+  <p>
+    <%= f.label :booking_number %><br>
+    <%= f.text_field :booking_number %>
+  </p>
+
+
+  <p>
+    <%= f.label :assigned_user %><br>
+    <%= f.text_field :assigned_user %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

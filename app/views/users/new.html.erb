@@ -1,0 +1,31 @@
+<%= form_for :user, url: users_path do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :user_name %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :role %><br>
+    <%= f.number_field :user_role %>
+  </p>
+ 
+  <p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

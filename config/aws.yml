@@ -1,0 +1,13 @@
+default: &default
+  access_key_id: AKIAJ3MJ4B5TXCKN3JJQ
+  secret_access_key: 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
+  dynamo_db_endpoint:  dynamodb.us-east-1.amazonaws.com
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
