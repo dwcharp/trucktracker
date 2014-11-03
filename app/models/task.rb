@@ -4,4 +4,6 @@ class Task
 	field :loading_point
 	field :assigned_user
 	field :equipment_number
+
+  belongs_to :user
 end

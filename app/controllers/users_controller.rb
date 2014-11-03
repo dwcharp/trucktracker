@@ -1,4 +1,3 @@
-require'DynamoDBService.rb'
 class UsersController < ApplicationController
 	def new
 		@user = User.new
@@ -6,17 +5,16 @@ class UsersController < ApplicationController
 
 	def create 
 		@user = User.new(user_params)
-		DynamoDBService.create_user(@user)
-		redirect_to :action => :show, :id=>@user.user_name
-		# if 
-		# 	redirect_to :action => :show, :id=>@user.user_id	
-		# else
-		# 	render 'new'
-		# end
+		if 	@user.save
+			redirect_to :action => :show, :id=>@user.user_name
+		else
+			render 'new'
+		end
 	end
 
 	def show 
 		@user = User.find(params[:id])
+    @task = Task.new
   end
 
   def index

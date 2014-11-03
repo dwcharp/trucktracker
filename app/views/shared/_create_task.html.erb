@@ -1,0 +1,21 @@
+<h1>Add task</h1>
+<%= form_for @task, remote:true do |f| %>
+    <p>
+      <%= f.label :loading_point %><br>
+      <%= f.text_field :loading_point%>
+    </p>
+
+    <p>
+      <%= f.label :booking_number %><br>
+      <%= f.text_field :booking_number %>
+    </p>
+
+    <p>
+      <%= f.label :assigned_user %><br>
+      <%= f.text_field :assigned_user, :value=> user %>
+    </p>
+
+    <p>
+      <%= submit_tag %>
+    </p>
+<% end %>

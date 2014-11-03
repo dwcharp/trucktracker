@@ -1,12 +1,13 @@
-require 'DynamoDBService.rb'
 class TasksController < ApplicationController
 	def new
+    @task = Task.new
 	end
 
 	def create
 		@task = Task.new(task_params)
-		DynamoDBService.create_task(@task)
-		redirect_to :action => :show, :id=>@task.booking_number
+		if @task.save
+      redirect_to :action => :show, :id=>@task.booking_number
+    end
 	end
 
 	def show
