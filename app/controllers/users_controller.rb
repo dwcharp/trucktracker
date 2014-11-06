@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
 	def show 
 		@user = User.find(params[:id])
+    @tasks = Task.where(:assigned_user=> @user.user_name).all
     @task = Task.new
   end
 

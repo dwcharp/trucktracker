@@ -4,6 +4,6 @@ class Task
 	field :loading_point
 	field :assigned_user
 	field :equipment_number
+  field :completed ,:boolean
 
-  belongs_to :user
 end

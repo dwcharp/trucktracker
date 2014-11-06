@@ -11,8 +11,6 @@ class User
 	field :last_name
 	field :password_hash
 
-  has_many :tasks
-
   def self.authentication(id, password)
     user  = find(id)
     # if user && BCrypt::Password.new(user.password_hash) == password

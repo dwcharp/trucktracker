@@ -5,8 +5,11 @@ class TasksController < ApplicationController
 
 	def create
 		@task = Task.new(task_params)
-		if @task.save
-      redirect_to :action => :show, :id=>@task.booking_number
+    respond_to do |format|
+      format.js
+      format.html {redirect_to :action => :show, :id=>@task.booking_number}
+      if @task.save
+      end
     end
 	end
 
@@ -16,6 +19,13 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.all
+  end
+
+  def edit
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
 	private

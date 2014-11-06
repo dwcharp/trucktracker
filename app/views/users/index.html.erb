@@ -9,8 +9,8 @@
   </tr>
 
   <% @users.each do |user| %>
-      <tr>
-        <td><%= user.user_name %></td>
+      <tr<%=  user_path( :id =>user.user_name) %>">
+        <td><%= link_to user.user_name, user_path(:id =>user.user_name) %></td>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.get_role() %></td>
