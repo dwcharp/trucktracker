@@ -6,4 +6,8 @@ class Task
 	field :equipment_number
   field :completed ,:boolean
 
+  def id
+    return booking_number
+  end
+
 end

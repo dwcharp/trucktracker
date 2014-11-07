@@ -1,17 +1,15 @@
 <h1>Assigned Task</h1>
 
-<table class="table" id="task-table">
+<table class="table table-hover" id="task-table">
   <tr>
     <th>Booking Number</th>
     <th>Loading Point</th>
-    <th>Edit</th>
   </tr>
 
   <% tasks.each do |task| %>
       <tr>
-        <td><%= task.booking_number %></td>
-        <td><%= task.loading_point %></td>
-
+        <td><%= best_in_place task, :booking_number %></td>
+        <td><%= best_in_place task, :loading_point %></td>
       </tr>
   <% end %>
 </table>

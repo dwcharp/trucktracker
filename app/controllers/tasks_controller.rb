@@ -28,6 +28,16 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    @task = Task.find(params[:id])
+    respond_to do |format|
+      if @task.update_attributes(params[:task])
+        format.html {redirect_to(@task, :notice => 'Task updated')}
+        format.json { head :ok }
+      end
+    end
+  end
+
 	private
 		def task_params
 			params.require(:task).permit(:booking_number, :equipment_number, :loading_point, :assigned_user)

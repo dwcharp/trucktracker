@@ -31,3 +31,4 @@ group: :development
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'# gem 'debugger', group: [:development, :test]
+gem 'best_in_place'
